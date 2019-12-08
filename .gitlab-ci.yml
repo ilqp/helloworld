@@ -1,0 +1,57 @@
+# build_ios:
+#   script:
+#     - make -f 3rdparty.make TARGET_OS=ios  VERBOSE=ON
+#     - make TARGET_OS=ios VERBOSE=ON
+#   tags:
+#     - macos
+
+# build_macos:
+#   script:
+#     - make -f 3rdparty.make  VERBOSE=ON
+#     - make VERBOSE=ON
+#   tags:
+#     - macos
+
+# build_android_32:
+#   script:
+#     - make -f 3rdparty.make TARGET_OS=android TARGET_ARCH=32  VERBOSE=ON
+#     - make TARGET_OS=android TARGET_ARCH=32 VERBOSE=ON
+#   tags:
+#     - macos
+
+# build_android_64:
+#   script:
+#     - make -f 3rdparty.make TARGET_OS=android TARGET_ARCH=64 VERBOSE=ON
+#     - make TARGET_OS=android TARGET_ARCH=64 VERBOSE=ON
+#   tags:
+#     - macos
+
+# build_windows_32:
+#   script:
+#     - powershell -noprofile -noninteractive -executionpolicy Bypass -C make -f 3rdparty.make TARGET_OS=windows TARGET_ARCH=32 VERBOSE=ON
+#     - powershell -noprofile -noninteractive -executionpolicy Bypass -C make TARGET_OS=windows TARGET_ARCH=32 VERBOSE=ON
+#   tags:
+#     - windows
+
+# build_windows_64:
+#   script:
+#     - powershell -noprofile -noninteractive -executionpolicy Bypass -C make -f 3rdparty.make TARGET_OS=windows TARGET_ARCH=64 VERBOSE=ON
+#     - powershell -noprofile -noninteractive -executionpolicy Bypass -C make TARGET_OS=windows TARGET_ARCH=64 VERBOSE=ON
+#   tags:
+#     - windows
+
+build_ubuntu_32:
+  image: marquisrobb/bionic32
+  script:
+    # - make -f 3rdparty.make VERBOSE=ON
+    - make VERBOSE=ON
+  tags:
+    - docker
+
+build_ubuntu_64:
+  image: marquisrobb/bionic64
+  script:
+    # - make -f 3rdparty.make VERBOSE=ON
+    - make VERBOSE=ON
+  tags:
+    - docker
