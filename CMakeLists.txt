@@ -17,3 +17,5 @@ enable_testing()
 add_test(NAME test_helloworld
         COMMAND helloworld
 )
+
+set_tests_properties(test_helloworld PROPERTIES LABELS "UnitTest;")
