@@ -37,12 +37,15 @@ hw_test: hw_build
 endif
 
 hw_build: hw_cmake
-	cmake --build $(BUILD_DIR)/hw $(HCONFIG_BUILD_TYPE)
+	cmake --build $(BUILD_DIR)/hw $(HCONFIG_BUILD_TYPE) --target helloworld
 
 hw_cmake:
 	@$(_ECHO) "DIR_STUB = ${DIR_STUB}"
 	@$(_ECHO) "TARGET_ARCH = ${TARGET_ARCH}"
 	cmake $(HW_CMAKE_OPTIONS)
+
+pb_build: hw_cmake
+	cmake --build $(BUILD_DIR)/hw $(HCONFIG_BUILD_TYPE) --target test_protobuf
 
 ####################################################################################################
 # Platform specific clean
