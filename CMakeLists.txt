@@ -21,7 +21,7 @@ protobuf_generate(TARGET lib_protobuftest)
 
 add_executable(test_protobuf test/test_protobuf.cpp)
 target_link_libraries(test_protobuf lib_protobuftest)
-install(TARGETS lib_protobuftest test_protobuf
+install(TARGETS lib_protobuftest test_protobuf OPTIONAL
         ARCHIVE DESTINATION lib
         RUNTIME DESTINATION bin
 )
@@ -33,7 +33,7 @@ set_target_properties(lib_helloworld PROPERTIES OUTPUT_NAME helloworld)
 add_executable(helloworld test/main.c)
 target_link_libraries(helloworld lib_helloworld)
 
-install(TARGETS lib_helloworld helloworld
+install(TARGETS lib_helloworld helloworld OPTIONAL
         ARCHIVE DESTINATION lib
         RUNTIME DESTINATION bin
 )
